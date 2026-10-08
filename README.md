@@ -13,11 +13,12 @@ Detailed instructions for reproducing each experiment are provided in the corres
 ## Citation
 
 If you use this code or build on this work, please cite:
+*Please note that my last name is “Abdel Magid” (with a space).*
 
 ```bibtex
 @inproceedings{abdelmagid2026bias,
   title     = {Bias at the End of the Score},
-  author    = {Abdel Magid, Salma and Guo, Grace and Tureci, Esin and Dharmasiri, Amaya and Ramaswamy, Vikram V. and Pfister, Hanspeter and Russakovsky, Olga},
+  author = {Salma {Abdel Magid} and Grace Guo and Esin Tureci and Amaya Dharmasiri and Vikram V. Ramaswamy and Hanspeter Pfister and Olga Russakovsky},
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year      = {2026}
 }
