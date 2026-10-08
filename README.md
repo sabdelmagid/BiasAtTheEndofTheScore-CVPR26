@@ -23,3 +23,6 @@ If you use this code or build on this work, please cite:
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year      = {2026}
 }
+
+
+Please feel free to reach out to me with any questions at **sabdelmagid @ princeton . edu**.
