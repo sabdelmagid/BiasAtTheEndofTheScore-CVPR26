@@ -25,4 +25,4 @@ If you use this code or build on this work, please cite:
 }
 ```
 
-Please feel free to reach out to me with any questions at **sabdelmagid @ princeton . edu**.
+Please feel free to reach out to me with any questions at **sabdelmagid@princeton.edu** 
