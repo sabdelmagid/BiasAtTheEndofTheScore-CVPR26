@@ -11,7 +11,6 @@ from rewards.clip import CLIPLoss
 from rewards.hps import HPSLoss
 from rewards.imagereward import ImageRewardLoss
 from rewards.pickscore import PickScoreLoss
-from rewards.contrastiveclip import ContrastiveCLIPLoss
 from rewards.incompression import IncompressionLoss
 
 

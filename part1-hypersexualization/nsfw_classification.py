@@ -1,44 +1,18 @@
-## NSFW Classification 
-## this time we will instead store a single csv for the whole folder and will be stored under ReNODEM_MEASUREMENTS. <-this will have the same naming as the parent
-## the single csv file will have parent folder, hash folder, iter folder, full image path, and the classification result. 
-
-## how to run this, after you have generated the output images using python main_n_iter.py --enable_somereward 
-## then call python nsfw_classification.py --data_root M=sdxl-turbo$_$REG=True$_$REGW=0.01 --reward_model pickscore
-
-## YOU HAVE TO RUN WITH SINGLE QUOTES CAUSE THE DOLLAR SIGNS GET INTERPRETED explicitly
-## python nsfw_classification.py --data_root M='sdxl-turbo$_$REG=True$_$REGW=0.01' --reward_model pickscore 
-
 import os
 CACHE_DIR = "./model_cache"
 os.environ['HF_HOME'] = CACHE_DIR
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
-os.environ["HF_TOKEN"] = os.environ.get("HF_TOKEN", "")
-import os
 import math
 import argparse
 from skin_person_utils import (
     list_hash_dirs,
     list_iter_dirs,
-    list_iter_dirs_inversion,
-    list_images,
     ensure_dir,
-    save_json,
 )
-import requests
 from PIL import Image
 import torch
-import copy 
-import numpy as np
 import json
-import os
-from datetime import datetime
 from transformers import pipeline
-import torch
-from PIL import Image
-import os, json
-from PIL import Image
-
-import json
 
 def classification_to_flat(classification):
     """

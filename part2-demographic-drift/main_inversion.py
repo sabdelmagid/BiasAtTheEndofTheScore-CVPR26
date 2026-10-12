@@ -312,8 +312,8 @@ def cleanup_pipeline(*objs):
 
 if __name__ == "__main__":
     
-    slurm_idx = int(os.environ.get("SLURM_ARRAY_TASK_ID"))
-    slurm_count = int(os.environ.get("ARRAY_COUNT"))  
+    slurm_idx = int(os.environ.get("SLURM_ARRAY_TASK_ID", 0))
+    slurm_count = int(os.environ.get("ARRAY_COUNT", 1))  
     total_combos = len(df_groups)
 
     if slurm_idx >= 0 and slurm_count > 0:

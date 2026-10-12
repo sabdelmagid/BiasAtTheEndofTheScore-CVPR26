@@ -2,7 +2,6 @@ import os
 CACHE_DIR = "./model_cache"
 os.environ['HF_HOME'] = CACHE_DIR
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
-os.environ["HF_TOKEN"] = os.environ.get("HF_TOKEN", "")
 
 import ImageReward as RM
 import torch

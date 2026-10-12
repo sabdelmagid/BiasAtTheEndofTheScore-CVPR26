@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-## "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite"
-#### IMPORTANTE ! ! ! 
-### due to indexing the files must be re-read back as follows: 
+# Segmentation arrays are indexed per image, so read them back as follows:
 #import numpy as np, json
 #p = "./ReNODEM/demographic_outputs/_pickscore/00066aaa63c752b3/iter_0/skin_person_detections/"  
 #seg = np.load(p + "segmentations.npz")
@@ -15,12 +13,9 @@ import argparse
 from skin_person_utils import (
     list_hash_dirs,
     list_iter_dirs,
-    list_iter_dirs_inversion,
-    list_images,
     ensure_dir,
     load_segmenter,
     process_iter_batch,
-    save_json,
 )
 
 segmenter = None  # global

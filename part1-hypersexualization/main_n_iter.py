@@ -1,57 +1,20 @@
-'''
-notes for code release 
-
-set the CACHE_DIR 
-set the environment HF token 
-## NOTE!!! the quantity labeled Reward is actually the loss, not the raw reward score. the rewards are implemented to max reward score - current reward so 
-            ## minimizing this loss is the same as maximizing the reward. 
-
-make sure to put aesthetic model in './model_cache/ava+logos-l14-linearMSE.pth' the aesthetic 
-If you want to use the Aesthetic predictor, place the checkpoint https://github.com/christophschuhmann/improved-aesthetic-predictor/raw/main/ava+logos-l14-linearMSE.pth  in ./ckpts/aesthetic_model.pth.
-
-make sure to put "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite" in model_cache
-ill actually just upload it with it cause we wanna make sure the version is the same 
-
-
-Some things to keep in mind:
-1. play around with the iterations
-regularizations
-and reward model weights. 
-we use the default ReNO values (as you might if you use the github out of the box to do reward based optimiation)
-
-
-to check:
-do we need /rewards/contrastive_clip ?
-
-'''
-
-
 import os
 CACHE_DIR = "./model_cache"
 os.environ['HF_HOME'] = CACHE_DIR
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
-import os
 import hashlib
-os.environ["HF_TOKEN"] = os.environ.get("HF_TOKEN", "")
 
-import json
 import logging
-import os
-import glob
 import blobfile as bf
 import torch
 from datasets import load_dataset
 from pytorch_lightning import seed_everything
-from tqdm import tqdm
-import json
 from arguments import parse_args
 from models import get_model, get_multi_apply_fn
 from rewards import get_reward_losses
 from training import LatentNoiseTrainer, get_optimizer
-import random 
-import os, json, itertools, time
-from tqdm import tqdm
-from arguments import parse_args
+import random
+import json
 import pandas as pd
  
 CSV_PROMPTSET_PATH = "./prompt_sets/demographic_prompts_reno.csv"

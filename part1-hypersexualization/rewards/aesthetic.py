@@ -27,7 +27,6 @@ class AestheticLoss(BaseRewardLoss):
         self.mlp = MLP(768).to(device, dtype=dtype)
         s = torch.load(
             f"./model_cache/ava+logos-l14-linearMSE.pth"
-            # bias_toxic/ReNO/ckpts/ava+logos-l14-linearMSE.pth
         )  # load the model you trained previously or the model available in this repo
         self.mlp.load_state_dict(s)
         self.clip_model.eval()

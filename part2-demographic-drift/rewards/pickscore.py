@@ -17,12 +17,9 @@ class PickScoreLoss(BaseRewardLoss):
         memsave: bool = False,
     ):
         self.tokenizer = tokenizer
-        print("Verbose --> IN PICKSCORE FINCTION")
         self.pickscore_model = AutoModel.from_pretrained(
-            "yuvalkirstain/PickScore_v1", cache_dir=CACHE_DIR
+            "yuvalkirstain/PickScore_v1", cache_dir=cache_dir
         ).eval()
-        print("Verbose --> model is loaded!")
-        
         if memsave:
             import memsave_torch.nn
 

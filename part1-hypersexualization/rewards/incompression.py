@@ -1,7 +1,6 @@
 import torch
 from rewards.base_reward import BaseRewardLoss
 import torch.nn.functional as F
-import itertools
 import numpy as np
 import torch.nn as nn
 

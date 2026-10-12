@@ -85,13 +85,11 @@ slurm/run_classify_inversion_outputs.sh
 
 `main.py` is the general ReNO entrypoint inherited from the base implementation. The demographic-drift experiments use `main_inversion.py` and `main_reno_with_init_inversion.py`.
 
-The active inversion objective is implemented in:
+The inversion objective is implemented in:
 
 ```text
 rewards/inversionscore_centroid.py
 ```
-
-Other inversion-score implementations are retained as experimental variants.
 
 ---
 
@@ -427,7 +425,7 @@ The resulting directory is:
 For classification, point the classifier to the anchor directory:
 
 ```bash
-export DEMOGRAPHIC_ANCHOR_DIR="/path/to/CFD/vitL14_embeddings/anchors"
+export RENO_ANCHOR_DIR="/path/to/CFD/vitL14_embeddings/anchors"
 ```
 
 ---

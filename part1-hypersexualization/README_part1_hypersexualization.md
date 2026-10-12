@@ -57,9 +57,6 @@ skin_person_detection.py
 
 skin_person_utils.py
     Shared segmentation and filesystem utilities.
-
-slurm/
-    Cluster launchers retained from the original experiments.
 ```
 
 ---
@@ -148,7 +145,11 @@ The skin-exposure pipeline expects the MediaPipe multiclass selfie-segmentation 
 model_cache/selfie_multiclass_256x256.tflite
 ```
 
-The model used in the experiments is the MediaPipe `selfie_multiclass_256x256` image segmenter.
+The model used in the experiments is the MediaPipe `selfie_multiclass_256x256` image segmenter, available at:
+
+```text
+https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite
+```
 
 ---
 
@@ -207,7 +208,7 @@ The code also contains support for additional model variants inherited from the 
 
 ## Optimization settings
 
-The release follows the ReNO optimization settings used in the experiments:
+The release uses the default ReNO optimization settings.
 
 ---
 
